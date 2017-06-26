@@ -1,0 +1,150 @@
+doctype html
+html(xmlns='http://www.w3.org/1999/xhtml')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(content='', name='description')
+    meta(content='webthemez', name='author')
+    title Studio 后台
+    // Bootstrap Styles
+    link(href='assets/css/bootstrap.css', rel='stylesheet')
+    // FontAwesome Styles
+    link(href='assets/css/font-awesome.css', rel='stylesheet')
+    // Custom Styles
+    link(href='assets/css/custom-styles.css', rel='stylesheet')
+    // Google Fonts
+    link(href='https://fonts.googleapis.com/css?family=Open+Sans', rel='stylesheet', type='text/css')
+  body
+    #wrapper
+      nav.navbar.navbar-default.top-navbar(role='navigation')
+        .navbar-header
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='.sidebar-collapse')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand(href='index.html')
+            strong
+              i.icon.fa.fa-plane
+              |  Studio 后台
+          #sideNav(href='')
+            i.fa.fa-bars.icon
+        ul.nav.navbar-top-links.navbar-right
+          // /.dropdown
+          li.dropdown
+            a.dropdown-toggle(data-toggle='dropdown', href='#', aria-expanded='false')
+              i.fa.fa-user.fa-fw
+              i.fa.fa-caret-down
+            ul.dropdown-menu.dropdown-user
+              li
+                a(href='#')
+                  i.fa.fa-user.fa-fw
+                  |  User Profile
+              li
+                a(href='#')
+                  i.fa.fa-gear.fa-fw
+                  |  Settings
+              li.divider
+              li
+                a(href='#')
+                  i.fa.fa-sign-out.fa-fw
+                  |  Logout
+            // /.dropdown-user
+          // /.dropdown
+      // /. NAV TOP
+      nav.navbar-default.navbar-side(role='navigation')
+        .sidebar-collapse
+          ul#main-menu.nav
+            li
+              a(href='index.html')
+                i.fa.fa-dashboard
+                |  Dashboard
+            li
+              a(href='ui-elements.html')
+                i.fa.fa-desktop
+                |  UI Elements
+            li
+              a(href='#')
+                i.fa.fa-sitemap
+                |  Charts
+                span.fa.arrow
+              ul.nav.nav-second-level
+                li
+                  a(href='chart.html') Charts JS
+                li
+                  a(href='morris-chart.html') Morris Chart
+            li
+              a(href='tab-panel.html')
+                i.fa.fa-qrcode
+                |  Tabs &amp; Panels
+            li
+              a(href='table.html')
+                i.fa.fa-table
+                |  Responsive Tables
+            li
+              a(href='form.html')
+                i.fa.fa-edit
+                |  Forms
+            li
+              a(href='#')
+                i.fa.fa-sitemap
+                |  Multi-Level Dropdown
+                span.fa.arrow
+              ul.nav.nav-second-level
+                li
+                  a(href='#') Second Level Link
+                li
+                  a(href='#') Second Level Link
+                li
+                  a(href='#')
+                    | Second Level Link
+                    span.fa.arrow
+                  ul.nav.nav-third-level
+                    li
+                      a(href='#') Third Level Link
+                    li
+                      a(href='#') Third Level Link
+                    li
+                      a(href='#') Third Level Link
+            li
+              a.active-menu(href='empty.html')
+                i.fa.fa-fw.fa-file
+                |  Empty Page
+      // /. NAV SIDE
+      #page-wrapper
+        .header
+          h1.page-header
+            | Empty Page 
+            small Create new page.
+          ol.breadcrumb
+            li
+              a(href='#') Home
+            li
+              a(href='#') Empty
+            li.active Data
+        #page-inner
+          block content
+          footer
+            p
+              | Copyright &copy; 2016.Company name All rights reserved.
+        // /. PAGE INNER
+      // /. PAGE WRAPPER
+    // /. WRAPPER
+    // JS Scripts
+    // JS Scripts
+    // jQuery Js
+    script(src='assets/js/jquery-1.10.2.js')
+    // Bootstrap Js
+    script(src='assets/js/bootstrap.min.js')
+    // Metis Menu Js
+    script(src='assets/js/jquery.metisMenu.js')
+    // Morris Chart Js
+    script(src='assets/js/morris/raphael-2.1.0.min.js')
+    script(src='assets/js/morris/morris.js')
+    script(src='assets/js/easypiechart.js')
+    script(src='assets/js/easypiechart-data.js')
+    script(src='assets/js/Lightweight-Chart/jquery.chart.js')
+    // Custom Js
+    script(src='assets/js/custom-scripts.js')
+    // Chart Js
+    script(type='text/javascript', src='assets/js/Chart.min.js')

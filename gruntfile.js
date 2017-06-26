@@ -2,7 +2,7 @@ module.exports = function(grunt){
 
   grunt.initConfig({
     watch: {
-      jade: {
+      pug: {
         files: ['app/views/**'],
         options: {
           livereload: true
@@ -21,7 +21,7 @@ module.exports = function(grunt){
         options: {
           file: 'app.js',
           args: [],
-          ignoredFiles: ['README.md', 'node_modules/**', '.DS_Store'],
+          ignoredFiles: ['README.md', 'node_modules/**', '.DS_Store', 'gruntfile.js'],
           watchedExtensions: ['js'],
           watchedFolders: ['./'],
           debug: true,
@@ -50,5 +50,6 @@ module.exports = function(grunt){
   grunt.option('force', true)
 
   grunt.registerTask('default', ['concurrent'])
+  grunt.registerTask('test', ['mochaTest'])
   
 }

@@ -41,9 +41,9 @@ if('development' === env){
   app.locals.pretty = true;
   mongoose.set('debug', true);
 }
+var config = require('./config');
 app.locals.moment = require('moment');
-// app.locals.title = config.web.title;
-// app.locals.memu = config.web.memu;
+app.locals.web = config.font_end;
 
 require('./app/routes/index')(app);
 
