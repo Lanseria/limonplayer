@@ -9,7 +9,9 @@ var mongoose = require('mongoose');
 var mongoStore = require('connect-mongo')(session);
 
 var dbUrl = 'mongodb://localhost/index';
-var port = process.env.PORT || 3001;
+var config = require('./config');
+
+var port = process.env.PORT || config.port;
 
 var app = express();
 
@@ -41,7 +43,6 @@ if('development' === env){
   app.locals.pretty = true;
   mongoose.set('debug', true);
 }
-var config = require('./config');
 app.locals.moment = require('moment');
 app.locals.web = config.font_end;
 
