@@ -6,16 +6,16 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var mongoose = require('mongoose');
-var mongoStore = require('connect-mongo')(session);
+//var mongoStore = require('connect-mongo')(session);
 
 var config = require('./config');
-var dbUrl = 'mongodb://'+config.m_username+':'+config.m_password+'@localhost/index';
+//var dbUrl = 'mongodb://'+config.m_username+':'+config.m_password+'@localhost/index';
 
 var port = process.env.PORT || config.port;
 
 var app = express();
 
-mongoose.connect(dbUrl, {useMongoClient: true});
+//mongoose.connect(dbUrl, {useMongoClient: true});
 
 app.set('views', path.join(__dirname, './app/views/pages'));
 app.set('view engine', 'pug');
@@ -30,10 +30,10 @@ app.use(session({
   secret:'imooc',
   resave: false,
   saveUninitialized: true,
-  store:new mongoStore({
-    url:dbUrl,
-    collection: 'sessions'
-  })
+  // store:new mongoStore({
+  //   url:dbUrl,
+  //   collection: 'sessions'
+  // })
 }));
 var env = process.env.NODE_ENV || 'development';
 
@@ -41,7 +41,7 @@ if('development' === env){
   app.set('showStackError', true);
   app.use(logger(':method :url :status'));
   app.locals.pretty = true;
-  mongoose.set('debug', true);
+  //mongoose.set('debug', true);
 }
 app.locals.moment = require('moment');
 app.locals.web = config.font_end;
