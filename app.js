@@ -9,7 +9,7 @@ var mongoose = require('mongoose');
 var mongoStore = require('connect-mongo')(session);
 
 var config = require('./config');
-var dbUrl = 'mongodb://'+config.m_username+'@'+config.m_password+'localhost/index';
+var dbUrl = 'mongodb://'+config.m_username+':'+config.m_password+'@localhost/index';
 
 var port = process.env.PORT || config.port;
 
