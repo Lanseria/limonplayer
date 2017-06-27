@@ -8,8 +8,8 @@ var session = require('express-session');
 var mongoose = require('mongoose');
 var mongoStore = require('connect-mongo')(session);
 
-var dbUrl = 'mongodb://localhost/index';
 var config = require('./config');
+var dbUrl = 'mongodb://'+config.m_username+'@'+config.m_password+'localhost/index';
 
 var port = process.env.PORT || config.port;
 
