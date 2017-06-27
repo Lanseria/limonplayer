@@ -15,7 +15,7 @@ var port = process.env.PORT || config.port;
 
 var app = express();
 
-mongoose.connect(dbUrl);
+mongoose.connect(dbUrl, {useMongoClient: true});
 
 app.set('views', path.join(__dirname, './app/views/pages'));
 app.set('view engine', 'pug');
