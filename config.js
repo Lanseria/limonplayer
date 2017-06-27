@@ -1,5 +1,5 @@
 var fs = require('fs');
-var str = fs.readFileSync('.env');
+var str = fs.readFileSync('.env').toString();
 var s = str.split('\n');
 var config = {
   m_username: s[0],
