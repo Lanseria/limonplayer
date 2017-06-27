@@ -52,7 +52,7 @@ const options = {
   key: fs.readFileSync('/etc/nginx/server.key'),
   cert: fs.readFileSync('/etc/nginx/server.crt')
 };
-http.createServer(app).listen(config.port);
-https.createServer(options, app).listen(config.ports);
+// http.createServer(app).listen(config.port,"www.limonplayer.cn");
+https.createServer(options, app).listen(config.ports, "www.limonplayer.cn");
 
 console.log('index started on http port '+config.port + ', https port ' +config.ports);
