@@ -55,4 +55,4 @@ const options = {
 http.createServer(app).listen(config.port);
 https.createServer(options, app).listen(config.ports);
 
-console.log('index started on port '+port);
+console.log('index started on http port '+config.port + ', https port ' +config.ports);
