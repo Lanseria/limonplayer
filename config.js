@@ -1,5 +1,6 @@
 var config = {
-  port: 3000,
+  port: 80,
+  ports: 443,
   font_end: {
     title: "Limon Studio 一个爱好前端甚至全栈的程序猿的工作室",
     description: "前端 全栈",

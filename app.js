@@ -1,17 +1,18 @@
-var express = require('express');
+const fs = require('fs');
+var http = require('http');
 var path = require('path');
-var favicon = require('serve-favicon');
+var https = require('https');
 var logger = require('morgan');
-var cookieParser = require('cookie-parser');
+var express = require('express');
+var mongoose = require('mongoose');
+var favicon = require('serve-favicon');
 var bodyParser = require('body-parser');
 var session = require('express-session');
-var mongoose = require('mongoose');
+var cookieParser = require('cookie-parser');
 var mongoStore = require('connect-mongo')(session);
 
 var dbUrl = 'mongodb://localhost/index';
 var config = require('./config');
-
-var port = process.env.PORT || config.port;
 
 var app = express();
 
@@ -47,7 +48,11 @@ app.locals.moment = require('moment');
 app.locals.web = config.font_end;
 
 require('./app/routes/index')(app);
-
-app.listen(port);
+const options = {
+  key: fs.readFileSync('/etc/nginx/server.key'),
+  cert: fs.readFileSync('/etc/nginx/server.crt')
+};
+http.createServer(app).listen(config.port);
+https.createServer(options, app).listen(config.ports);
 
 console.log('index started on port '+port);
