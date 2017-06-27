@@ -1,18 +1,17 @@
-const fs = require('fs');
-var http = require('http');
-var path = require('path');
-var https = require('https');
-var logger = require('morgan');
 var express = require('express');
-var mongoose = require('mongoose');
+var path = require('path');
 var favicon = require('serve-favicon');
+var logger = require('morgan');
+var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
-var cookieParser = require('cookie-parser');
+var mongoose = require('mongoose');
 var mongoStore = require('connect-mongo')(session);
 
 var dbUrl = 'mongodb://localhost/index';
 var config = require('./config');
+
+var port = process.env.PORT || config.port;
 
 var app = express();
 
@@ -48,11 +47,7 @@ app.locals.moment = require('moment');
 app.locals.web = config.font_end;
 
 require('./app/routes/index')(app);
-const options = {
-  key: fs.readFileSync('/etc/nginx/server.key'),
-  cert: fs.readFileSync('/etc/nginx/server.crt')
-};
-// http.createServer(app).listen(config.port,"www.limonplayer.cn");
-https.createServer(options, app).listen(config.ports, "www.limonplayer.cn");
 
-console.log('index started on http port '+config.port + ', https port ' +config.ports);
+app.listen(port);
+
+console.log('index started on port '+port);
